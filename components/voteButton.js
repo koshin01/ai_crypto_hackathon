@@ -31,6 +31,7 @@ export default function VoteButton({ index }) {
 
     const change = (num) => {
         setIsChangeable(num)
+        
     }
 
     const vote = (num) => {
