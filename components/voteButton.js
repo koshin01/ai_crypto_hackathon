@@ -49,7 +49,7 @@ export default function VoteButton({ index }) {
             <button
                 className="py-3 px-5 h-full rounded-md border-2 border-gray-500 hover:border-gray-600 text-gray-700 font-semibold"
                 onClick={() => vote(index)}>
-                Vote {voteCount}
+                Vote <span className = "text-green-600">{voteCount}</span>
             </button>
 
         </div>
