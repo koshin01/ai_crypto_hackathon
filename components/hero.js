@@ -136,7 +136,7 @@ export default function Hero({ questionContext }) {
                                     <VoteButton index={index} />
                                 </IsChangebleContext.Provider>
                                 <button
-                                    className="py-3 px-7 rounded-md border-2 border-gray-500 hover:border-gray-600 text-gray-700 font-semibold"
+                                    className="py-3 px-5 rounded-md border-2 border-gray-500 hover:border-gray-600 text-gray-700 font-semibold"
                                     onClick={() => comment(index)}>
                                     Comment
                                 </button>
