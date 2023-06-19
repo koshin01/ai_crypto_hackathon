@@ -92,7 +92,7 @@ export default function Hero({ questionContext }) {
             <div className="space-y-7 flex flex-col mt-10">
                 {question.slice(0).map((question, index) => {
                     return (
-                        <div key={index} className="mx-auto flex flex-row w-6/12">
+                        <div key={index} className="mx-auto flex flex-row w-8/12">
                             <div>
                                 {isChangeable === index ? (
                                     <div className="flex">
