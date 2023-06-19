@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react"
 
 import { ConnectWallet } from "@thirdweb-dev/react";
 
-import { useContract, useContractWrite, useContractRead, useContractEvents } from "@thirdweb-dev/react";
+import { useContract, useContractWrite, useContractRead, useContractEvent, useAddress } from "@thirdweb-dev/react";
 
 import IsOpenContext from "@/contexts/isOpenContext"
 
@@ -11,6 +11,8 @@ import IsChangebleContext from "@/contexts/isChangebleContext"
 import CustomDialog from "@/components/customDialog";
 
 import VoteButton from "@/components/voteButton"
+
+import AwardNFT from "@/components/awardNFT";
 
 export default function Hero({ questionContext }) {
 
@@ -27,6 +29,8 @@ export default function Hero({ questionContext }) {
     const [isChangeable, setIsChangeable] = useState()
 
     const [isOpen, setIsOpen] = useState(false)
+
+    const userAddress = useAddress();
 
     const { contract } = useContract(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS);
 
@@ -75,9 +79,6 @@ export default function Hero({ questionContext }) {
     }
 
     const sendNewQuestion = async(num) => {
-        console.log(num)
-        console.log(context)
-        console.log(answer)
         await call(num, context, answer)
     }
 
@@ -86,6 +87,7 @@ export default function Hero({ questionContext }) {
             <div className="flex flex-col w-72 space-y-7 mt-10 mx-auto">
                 <h1 className="text-3xl font-bold text-center">DAIS</h1>
                 <ConnectWallet />
+                <AwardNFT userAddress = {userAddress}/>
             </div>
             <div className="space-y-7 flex flex-col mt-10">
                 {question.slice(0).map((question, index) => {
