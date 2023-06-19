@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect, useContext } from 'react'
 
 import { useContract, useContractWrite, useContractRead } from "@thirdweb-dev/react";
 
-export default function commentBoard({ questionNum, commentCount }) {
+export default function CommentBoard({ questionNum, commentCount }) {
 
     const [currentCommnet, setCurrentCommnet] = useState([])
 
