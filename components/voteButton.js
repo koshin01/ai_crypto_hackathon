@@ -39,7 +39,7 @@ export default function VoteButton({ index }) {
 
     return (
         <div>
-            {voteCount % 3 == 0 ? (
+            {voteCount % 3 == 0 && voteCount !== 0 ? (
                 <button
                     className="py-3 px-7 h-full rounded-md border-2 border-gray-500 hover:border-gray-600 text-gray-700 font-semibold"
                     onClick={() => change(index)}>
